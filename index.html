@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Simulador de Investimentos</title>
+</head>
+<body>
+  <div class="container__master">
+    <div class="container__main">
+        <h1>Simulador de Investimentos</h1>
+      <main>
+        <div class="container__subtitle">
+          <h2>Simulador</h2>  
+        </div>
+        <div class="containers">
+          <div class="containers__show">
+            <div class="container__left">
+              <div class="container__left__rendimento">
+                <span>Rendimento</span>
+                <a href="#">
+                  <img src="./img/info_icon.png" alt="">
+                </a>  <br>
+                <form class="left__form" >
+                  <div class="custom__radio">
+                    <input type="radio" name="tipo_de_rendimento" id="bruto" checked value="bruto">
+                    <label for="bruto">Bruto</label><input type="radio" name="tipo_de_rendimento" id="liquido" value="liquido"><label for="liquido">Líquido</label>
+                  </div>
+                  <label for="aporte__inicial" id="label2">Aporte Inicial</label>
+                  <input type="number" name="Aporte_inicial" id="aporte__inicial" required placeholder="Números apenas (R$)">
+                  <label for="prazo" id="label3">Prazo (em meses)</label>
+                  <input type="number" name="prazo" id="prazo" required placeholder="Números apenas">
+                  <label for="IPCA" id="label1">IPCA (ao ano)</label>
+                  <input type="text" name="IPCA" id="IPCA" disabled>
+                </form>
+    
+              </div>
+              <div class="container__left__indexacao">
+                <span>Tipos de indexação</span> 
+                <a href="#">
+                  <img src="./img/info_icon.png" alt="">
+                </a> 
+                <br>           
+                <form class="right__form">
+                  <div class="custom__radio_2">
+                    <input type="radio" name="indexacao" id="pre" value="pre">
+                    <label for="pre">PRÉ</label><input type="radio" name="indexacao" id="pos" value="pos" checked><label for="pos">PÓS</label><input type="radio" name="indexacao" id="fixado" value="ipca"><label for="fixado">FIXADO</label>
+                  </div>
+                  <label for="aporte__mensal" id="label4">Aporte Mensal</label>
+                  <input type="number" name="aporte__mensal" id="aporte__mensal" placeholder="Números apenas (R$)">
+                  <label for="rentabilidade" id="label5">Rentabilidade (%)</label>
+                  <input type="number" name="rentabilidade" id="rentabilidade" placeholder="Números apenas">
+                  <label for="CDI" id ="cdi_1"> CDI (ao ano)</label>
+                  <input type="text" name="CDI" id="CDI" disabled>
+                </form>
+    
+              </div>
+            </div>
+            <div class="container__right">
+              <h2>Resultado da Simulação</h2>
+              <div class="container__info">
+                <div class="infos">
+                  <h3>Valor Final Bruto</h3>
+                  <p id="valor_final_bruto"> </p>
+                </div>
+                <div class="infos">
+                  <h3>Alíquota do IR</h3>
+                  <p id="aliquota_IR"> </p>
+                </div>
+                <div class="infos">
+                  <h3>Valor pago em IR</h3>
+                  <p id="valor_pago_IR"> </p>
+                </div>
+                <div class="infos">
+                  <h3>Valor Final Líquido</h3>
+                  <p class="verde" id="valor_final_liquido"> </p>
+                </div>
+                <div class="infos">
+                  <h3>Valor Total Investido</h3>
+                  <p id="valor_total_investido"> </p>
+                </div>
+                <div class="infos">
+                  <h3>Ganho Líquido</h3>
+                  <p class="verde" id="ganho_liquido"> </p>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+          <div class="container__bottom">
+            <button type="reset" id="btn__clear">Limpar Campos</button>
+            <button type="submit" id="btn__submit" >Simular</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script defer src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js" integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script defer src="script.js" defer></script>  
+</body>
+</html>
